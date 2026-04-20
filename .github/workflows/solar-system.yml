@@ -84,6 +84,10 @@ jobs:
 
   docker:
     name: Docker Build and Push
+    permissions:
+      contents: read
+      packages: write   # 👈 this is what's missing
+
     runs-on: ubuntu-latest
     needs: [unit-testing, code-coverage]  # ← runs AFTER both jobs pass ✅
 
